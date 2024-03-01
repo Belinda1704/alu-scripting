@@ -1,11 +1,32 @@
-# API advanced
+# Advanced API
 
-## Description
-This project focuses on making recursive requests to an API, how to use an API with pagination and how to read API documentation to find the endpoints we’re looking for.
+![](https://nordicapis.com/wp-content/uploads/How-API-Security-Has-Advanced-With-The-Dawn-of-AI-1024x576.png)
 
-## Table of contents
-Files | Description
------ | -----------
-[0-subs.py](./0-subs.py) | Python function that queries the Reddit API and returns the number of subscribers (not active users, total subscribers) for a given subreddit
-[1-top_ten.py](./1-top_ten.py) | Python function that queries the Reddit API and prints the titles of the first 10 hot posts listed for a given subreddit
-[2-recurse.py](./2-recurse.py) | Python recursive function that queries the Reddit API and returns a list containing the titles of all hot articles for a given subreddit
+> A great API to use for some practice is the Reddit API. There’s a lot of endpoints available, many that don’t require any form of authentication, and there’s tons of information to be parsed out and presented. Getting comfortable with API calls now can save you some face during technical interviews and even outside of the job market, you might find personal use cases to make your life a little bit easier.
+
+## Learning Objectives
+
+- How to read API documentation to find the endpoints you’re looking for
+- How to use an API with pagination
+- How to parse JSON results from an API
+- How to make a recursive API call
+- How to sort a dictionary by value
+
+## Resources
+
+- [Reddit API Documentation](https://www.reddit.com/dev/api/)
+- [Query String](https://en.wikipedia.org/wiki/Query_string)
+
+## Project Requirements
+
+- Allowed editors: `vi`, `vim`, `emacs`
+- All your files will be interpreted/compiled on `Ubuntu 14.04 LTS` using `python3 (version 3.4.3)`
+- All your files should end with a new line
+- The first line of all your files should be exactly `#!/usr/bin/python3`
+- Libraries imported in your Python files must be organized in alphabetical order
+- A `README.md` file, at the root of the folder of the project, is mandatory
+- Your code should use the __PEP 8 style__
+- All your __files must be executable__
+- The length of your files will be tested using `wc`
+- All your modules should have a documentation `(python3 -c 'print(__import__("my_module").__doc__)')`
+- You must use the Requests module for sending HTTP requests to the Reddit API
