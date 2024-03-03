@@ -1,18 +1,16 @@
 #!/usr/bin/python3
-""" script to obtain subscribers
-    count from a subreddit
-    """
-    from requests import get
+"""Script that fetch 10 hot post for a given subreddit."""
+import requests
 
 
-    def number_of_subscribers(subreddit):
-            """ function to get subscriber count"""
-                if subreddit and type(subreddit) is str:
-                            subscribers = 0
-                                    url = 'https://reddit.com/r/{}/about.json'.format(subreddit)
-                                            headers = {'user-agent': 'my-app/0.0.1'}
-                                                    req = get(url, headers=headers)
-                                                            if req.status_code == 200:
-                                                                            data = req.json()
-                                                                                        subscribers = data.get('data', {}).get('subscribers', 0)
-                                                                                                return subscribers
+def number_of_subscribers(subreddit):
+    """Return the number of subscribers for the given subreddit."""
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    headers = {'User-Agent': 'My User Agent 1.0'}
+    response = requests.get(url, headers=headers, allow_redirects=False)
+
+    if response.status_code == 200:
+        data = response.json().get('data')
+        if data:
+            return data.get('subscribers', 0)
+    return 0
